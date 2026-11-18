@@ -1,0 +1,67 @@
+:root {
+  color-scheme: light;
+  --ink: #222c35;
+  --navy: #163957;
+  --muted: #50606e;
+  --line: #cdd5db;
+  --serif: Georgia, "Times New Roman", serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font: 1rem/1.65 system-ui, sans-serif;
+}
+.wrap { width: min(64rem, calc(100% - 3rem)); margin-inline: auto; }
+a { color: var(--navy); text-underline-offset: .22em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid #426f94; outline-offset: 4px; }
+.skip { position: absolute; left: 1rem; top: -8rem; padding: .5rem; background: white; }
+.skip:focus { top: .5rem; }
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem 2rem;
+  padding-block: 1.3rem;
+  border-bottom: 1px solid var(--line);
+}
+.school { font: bold 1.35rem var(--serif); }
+nav { display: flex; flex-wrap: wrap; gap: .35rem 1.35rem; font-size: .9rem; }
+.masthead a { text-decoration: none; }
+.masthead a:hover { text-decoration: underline; }
+.profile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 16rem);
+  gap: 2rem;
+  align-items: end;
+  padding: 4.25rem 0 3.5rem;
+  border-bottom: 2px solid var(--navy);
+}
+h1, h2, h3 { margin: 0; color: var(--navy); font-family: var(--serif); font-weight: 500; line-height: 1.18; }
+h1 { font-size: 3.85rem; overflow-wrap: anywhere; }
+h2 { font-size: 1.55rem; }
+h3 { font-size: 1.65rem; margin-bottom: .8rem; }
+.role { margin: 1rem 0 .25rem; font-weight: 600; }
+.affiliation { margin: 0; color: var(--muted); }
+aside { border-left: 2px solid var(--line); padding-left: 1.45rem; }
+aside h2 { font-size: 1.2rem; }
+address { display: grid; justify-items: start; gap: .25rem; margin-top: .6rem; font-style: normal; font-size: .95rem; overflow-wrap: anywhere; }
+.entry { display: grid; grid-template-columns: minmax(11rem, 1fr) minmax(0, 2.7fr); gap: 2rem; padding: 2.75rem 0; border-bottom: 1px solid var(--line); }
+.body-copy { max-width: 67ch; }
+.body-copy p { margin: 0 0 .8rem; }
+.body-copy p:last-child { margin-bottom: 0; }
+.tech { font-size: .88rem; color: var(--muted); }
+.project-link { font-size: .94rem; }
+main { padding-bottom: 3rem; }
+@media (max-width: 43rem) {
+  .wrap { width: calc(100% - 2.25rem); }
+  h1 { font-size: 2.85rem; }
+  .profile, .entry { grid-template-columns: minmax(0, 1fr); }
+  .profile { padding: 2.75rem 0 2rem; gap: 1.6rem; }
+  .entry { gap: 1rem; padding: 1.9rem 0; }
+  aside { padding-left: 1rem; }
+  nav { gap: .4rem .9rem; }
+}
